@@ -1,0 +1,197 @@
+  :root {
+    --bg: #F4F1EA;
+    --ink: #21201C;
+    --muted: #716C61;
+    --hairline: #DFD9CB;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #171613;
+      --ink: #E9E5DB;
+      --muted: #9A9487;
+      --hairline: #2E2C26;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .page {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 48px 24px 72px;
+  }
+
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .wordmark {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  nav { display: flex; gap: 18px; }
+  nav a {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  nav a:hover { color: var(--ink); }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 64px 0 8px;
+  }
+  .alias {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 19px;
+    margin: 0 0 36px;
+  }
+
+  p { margin: 0 0 1.15em; }
+  a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--ink) 35%, transparent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  a:hover { text-decoration-color: var(--ink); }
+
+  section { margin-top: 56px; }
+  .label {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 18px;
+  }
+
+  ul {
+    margin: 0 0 1.15em;
+    padding-left: 22px;
+  }
+  li { margin-bottom: 10px; padding-left: 6px; }
+  li::marker { content: "▪"; font-size: 11px; color: var(--muted); }
+
+  .cite {
+    border-left: 2px solid var(--hairline);
+    padding: 2px 0 2px 20px;
+    margin: 0 0 1.15em;
+  }
+  .cite .title { font-style: italic; }
+  .cite .venue { color: var(--muted); font-size: 16.5px; display: block; margin-top: 4px; }
+
+  footer {
+    margin-top: 80px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    h1 { font-size: 33px; margin-top: 48px; }
+    .wordmark { letter-spacing: 0.28em; }
+  }
+
+  h2.label {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 18px;
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--ink);
+    outline-offset: 3px;
+  }
+  a:focus-visible {
+    outline: none;
+    text-decoration: underline;
+    text-decoration-color: var(--ink);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  nav a:focus-visible,
+  .wordmark:focus-visible,
+  footer a:focus-visible {
+    outline: none;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--ink);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .skip {
+    position: absolute;
+    left: 16px;
+    top: 0;
+    z-index: 20;
+    transform: translateY(-160%);
+    padding: 8px 12px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border: 1px solid var(--hairline);
+  }
+  .skip:focus,
+  .skip:focus-visible {
+    transform: none;
+    top: 12px;
+    outline: 1px solid var(--ink);
+    outline-offset: 2px;
+    text-decoration: none;
+  }
+
+  .not-found { margin-top: 8px; }
+  .not-found h1 { margin-bottom: 16px; }
+  .not-found .home-link {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
