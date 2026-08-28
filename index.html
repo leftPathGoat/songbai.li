@@ -10,151 +10,44 @@
 <meta property="og:description" content="Operator and researcher at Imagine AI (YC F25). Based in San Francisco.">
 <meta property="og:url" content="https://songbai.li/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://songbai.li/og.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Songbai Li">
+<meta name="twitter:description" content="Operator and researcher at Imagine AI (YC F25). Based in San Francisco.">
+<meta name="twitter:image" content="https://songbai.li/og.png">
+<meta name="theme-color" content="#F4F1EA">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F4F1EA'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%2321201C'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #F4F1EA;
-    --ink: #21201C;
-    --muted: #716C61;
-    --hairline: #DFD9CB;
-    --serif: "Newsreader", Georgia, "Times New Roman", serif;
-    --sans: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Songbai Li",
+  "alternateName": "Francis",
+  "url": "https://songbai.li/",
+  "email": "mailto:francis.lix03@gmail.com",
+  "jobTitle": "Member of research staff",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Francisco"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/songbai-li"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Imagine AI",
+    "url": "https://imagineai.me"
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #171613;
-      --ink: #E9E5DB;
-      --muted: #9A9487;
-      --hairline: #2E2C26;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--serif);
-    font-size: 18px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-  .page {
-    max-width: 620px;
-    margin: 0 auto;
-    padding: 48px 24px 72px;
-  }
-
-  /* Header / wordmark */
-  header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--hairline);
-  }
-  .wordmark {
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.38em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  nav { display: flex; gap: 18px; }
-  nav a {
-    font-family: var(--sans);
-    font-size: 12.5px;
-    letter-spacing: 0.02em;
-    color: var(--muted);
-    text-decoration: none;
-  }
-  nav a:hover { color: var(--ink); }
-
-  /* Hero */
-  h1 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    margin: 64px 0 8px;
-  }
-  .alias {
-    color: var(--muted);
-    font-style: italic;
-    font-size: 19px;
-    margin: 0 0 36px;
-  }
-
-  p { margin: 0 0 1.15em; }
-  a {
-    color: var(--ink);
-    text-decoration: underline;
-    text-decoration-color: color-mix(in srgb, var(--ink) 35%, transparent);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-  }
-  a:hover { text-decoration-color: var(--ink); }
-
-  /* Sections */
-  section { margin-top: 56px; }
-  .label {
-    font-family: var(--sans);
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 18px;
-  }
-
-  ul {
-    margin: 0 0 1.15em;
-    padding-left: 22px;
-  }
-  li { margin-bottom: 10px; padding-left: 6px; }
-  li::marker { content: "▪"; font-size: 11px; color: var(--muted); }
-
-  /* Citation block */
-  .cite {
-    border-left: 2px solid var(--hairline);
-    padding: 2px 0 2px 20px;
-    margin: 0 0 1.15em;
-  }
-  .cite .title { font-style: italic; }
-  .cite .venue { color: var(--muted); font-size: 16.5px; display: block; margin-top: 4px; }
-
-  footer {
-    margin-top: 80px;
-    padding-top: 20px;
-    border-top: 1px solid var(--hairline);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-family: var(--sans);
-    font-size: 12.5px;
-    color: var(--muted);
-  }
-  footer a { color: var(--muted); text-decoration: none; }
-  footer a:hover { color: var(--ink); }
-
-  @media (max-width: 480px) {
-    body { font-size: 17px; }
-    h1 { font-size: 33px; margin-top: 48px; }
-    .wordmark { letter-spacing: 0.28em; }
-  }
-</style>
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="page">
 
   <header>
@@ -165,7 +58,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
     <h1>Songbai Li</h1>
     <p class="alias">most people call me Francis.</p>
 
@@ -174,12 +67,12 @@
     <p>I care about how things actually get adopted: not just whether a system works, but whether a real team will change how it operates because of it. The best work I have done sits at that boundary between the product and the people using it.</p>
 
     <section id="now">
-      <p class="label">Now</p>
+      <h2 class="label">Now</h2>
       <p>Member of research staff at Imagine&nbsp;AI. Working directly with customers, running deployments end to end, and studying how frontier AI systems are prompted, steered, and evaluated.</p>
     </section>
 
     <section id="tldr">
-      <p class="label">TL;DR</p>
+      <h2 class="label">TL;DR</h2>
       <ul>
         <li>studied Mathematics&ndash;Computer Science at UC&nbsp;San&nbsp;Diego</li>
         <li>first hire at <a href="https://imagineai.me">Imagine&nbsp;AI</a> (YC&nbsp;F25); grew with the company across engineering, customer work, and operations</li>
@@ -189,7 +82,7 @@
     </section>
 
     <section id="research">
-      <p class="label">Research</p>
+      <h2 class="label">Research</h2>
       <div class="cite">
         <span class="title">Stablecoin reserve risk under the GENIUS Act: Evidence from the Silicon Valley Bank shock</span>
         <span class="venue">International Review of Economics and Finance, forthcoming</span>
@@ -198,7 +91,7 @@
     </section>
 
     <section id="hi">
-      <p class="label">Say hi</p>
+      <h2 class="label">Say hi</h2>
       <p>I like meeting people who are building something. Find me on <a href="https://www.linkedin.com/in/songbai-li">LinkedIn</a> or write to <a href="mailto:francis.lix03@gmail.com">francis.lix03@gmail.com</a>.</p>
       <p>Off hours, I plan overly detailed group trips and read about how frontier labs steer their models.</p>
     </section>
