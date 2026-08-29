@@ -1,4 +1,4 @@
-import { mountSquirrelMascot } from "/mascot/squirrelMascot.js";
+import { mountSquirrelMascot } from "/mascot/squirrelMascot.js?v=sleep2";
 
 const KEY = "songbai.mascot.v1";
 const btn = document.getElementById("companion-toggle");

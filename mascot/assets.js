@@ -16,7 +16,7 @@ export const POSES = {
   eat: art("eat.png"),
   pet: art("pet.png"),
   held: art("held.png"),
-  sleep: art("sleep.png"),
+  sleep: art("sleep-in-nest.png"),
   nest: art("nest.png"),
   point: art("point.png"),
   inspect: art("inspect.png"),
