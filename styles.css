@@ -59,6 +59,23 @@
     text-decoration: none;
   }
   nav a:hover { color: var(--ink); }
+  nav button.companion-toggle {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  nav button.companion-toggle:hover,
+  nav button.companion-toggle[aria-pressed="true"] { color: var(--ink); }
+  .squirrel-mascot-close,
+  .squirrel-mascot-restore { display: none; }
+
 
   h1 {
     font-family: var(--serif);
@@ -154,6 +171,7 @@
     text-underline-offset: 3px;
   }
   nav a:focus-visible,
+  nav button.companion-toggle:focus-visible,
   .wordmark:focus-visible,
   footer a:focus-visible {
     outline: none;

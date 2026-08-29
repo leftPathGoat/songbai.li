@@ -1,6 +1,25 @@
 # Changelog
 
+## [Homepage squirrel] — 2026-08-29
+
+Preview only. Not deployed to production (songbai.li / Netlify).
+
+### Added
+- Optional homepage squirrel mascot (`companion.js` + `mascot/`)
+- Header toggle: Squirrel / Squirrel off
+- Pixel-art poses, nest, pine nut, glove cursor
+- Modular vanilla ES modules (no bundler)
+
+### Behavior
+- Lives at the bottom of the viewport
+- Walks and snacks on the ground
+- Climbs only onto collected text lines, one vertical hop at a time
+- No diagonal slides
+- Rare short climbs (1–3 lines), occasional pine nut
+- Idle nest-sleep, hover pet, drag with glove
+
 ## [Week 1 foundation] — 2026-08-28
+
 
 Foundation only. No public wording changed. Not deployed to production.
 

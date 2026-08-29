@@ -1,0 +1,142 @@
+/**
+ * Homepage squirrel overlay. Pixelated PNG poses.
+ * Overlay is pointer-events:none; only the squirrel sprite receives input.
+ */
+
+.squirrel-mascot-root {
+  --sm-size: 96px;
+  --sm-z: 45;
+  --sm-glove-open: url("/mascot/art/glove-open.png");
+  --sm-glove-grab: url("/mascot/art/glove-grab.png");
+  --sm-accent: #e07a3d;
+
+  position: fixed;
+  inset: 0;
+  z-index: var(--sm-z);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.squirrel-mascot-root[data-enabled="false"] {
+  visibility: hidden;
+}
+
+.squirrel-mascot-nest,
+.squirrel-mascot-nut {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.squirrel-mascot-nest {
+  width: calc(var(--sm-size) * 1.28);
+  height: calc(var(--sm-size) * 0.74);
+  opacity: 0;
+  transform-origin: 50% 80%;
+}
+
+.squirrel-mascot-nest[data-open="true"] {
+  opacity: 1;
+}
+
+.squirrel-mascot-nut {
+  width: 26px;
+  height: 26px;
+  opacity: 0;
+}
+
+.squirrel-mascot-nut[data-open="true"] {
+  opacity: 1;
+}
+
+.squirrel-mascot-nut[data-eaten="true"] {
+  opacity: 0;
+}
+
+.squirrel-mascot-nest img,
+.squirrel-mascot-nut img,
+.squirrel-mascot-stage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.squirrel-mascot-actor {
+  position: absolute;
+  z-index: 1;
+  width: var(--sm-size);
+  height: var(--sm-size);
+  pointer-events: auto;
+  touch-action: none;
+  cursor: var(--sm-glove-open) 16 16, pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transform-origin: 50% 80%;
+  transition: none;
+}
+
+.squirrel-mascot-root[data-cursor="pet"] .squirrel-mascot-actor,
+.squirrel-mascot-actor[data-cursor="pet"] {
+  cursor: var(--sm-glove-open) 16 16, pointer;
+}
+
+.squirrel-mascot-root[data-cursor="grab"] .squirrel-mascot-actor,
+.squirrel-mascot-actor[data-cursor="grab"],
+.squirrel-mascot-actor:active,
+.squirrel-mascot-actor[data-dragging="true"] {
+  cursor: var(--sm-glove-grab) 16 16, grabbing;
+}
+
+html.squirrel-mascot-grabbing,
+html.squirrel-mascot-grabbing * {
+  cursor: var(--sm-glove-grab) 16 16, grabbing !important;
+}
+
+.squirrel-mascot-actor:focus-visible {
+  outline: 2px solid var(--sm-accent);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+.squirrel-mascot-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.squirrel-mascot-actor[data-pose="held"] {
+  filter: drop-shadow(0 10px 8px rgba(33, 32, 28, 0.14));
+}
+
+.squirrel-mascot-actor[data-pose="sleep"]::after {
+  content: "z";
+  position: absolute;
+  left: 70%;
+  top: 8%;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5c3a1e;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.squirrel-mascot-close,
+.squirrel-mascot-restore,
+.squirrel-mascot-bubble {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .squirrel-mascot-actor[data-pose="sleep"]::after {
+    animation: none;
+  }
+}
+
+.squirrel-mascot-root[data-reduced="true"] .squirrel-mascot-actor[data-pose="sleep"]::after {
+  animation: none;
+}
