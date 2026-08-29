@@ -21,7 +21,10 @@
   visibility: hidden;
 }
 
-.squirrel-mascot-nest,
+.squirrel-mascot-nest {
+  display: none !important;
+}
+
 .squirrel-mascot-nut {
   position: absolute;
   z-index: 0;

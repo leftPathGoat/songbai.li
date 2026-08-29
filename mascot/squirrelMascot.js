@@ -7,7 +7,7 @@
 import { poseUrl, propUrl, preload } from "./assets.js";
 import { collectBranches } from "./branches.js";
 import { clampPos, groundY } from "./motion.js";
-import { createNest, placeNest, setNestOpen, isInactive } from "./nest.js";
+import { isInactive } from "./nest.js";
 import { bindInput } from "./input.js";
 import {
   pickNext,
@@ -52,7 +52,6 @@ export function mountSquirrelMascot(raw) {
   root.style.setProperty("--sm-glove-open", `url("${propUrl("gloveOpen", assets)}")`);
   root.style.setProperty("--sm-glove-grab", `url("${propUrl("gloveGrab", assets)}")`);
 
-  const nest = createNest(assets);
   const nut = createNut(assets);
 
   const actor = document.createElement("div");
@@ -69,7 +68,6 @@ export function mountSquirrelMascot(raw) {
   stage.appendChild(img);
   actor.appendChild(stage);
 
-  root.appendChild(nest);
   root.appendChild(nut);
   root.appendChild(actor);
   parent.appendChild(root);
@@ -116,7 +114,6 @@ export function mountSquirrelMascot(raw) {
   function place() {
     actor.style.left = `${Math.round(x)}px`;
     actor.style.top = `${Math.round(y)}px`;
-    placeNest(nest, x, y, size);
     nut.style.left = `${Math.round(nut._x || 0)}px`;
     nut.style.top = `${Math.round(nut._y || 0)}px`;
   }
@@ -138,9 +135,7 @@ export function mountSquirrelMascot(raw) {
   }
 
   function openNest(open) {
-    nestOpen = open;
-    setNestOpen(nest, open);
-    placeNest(nest, x, y, size);
+    nestOpen = !!open;
   }
 
   function setCursor(mode) {

@@ -168,14 +168,6 @@ export function planNest(x, y, size) {
   const plan = planToGround(x, y, size);
   const steps = plan.steps.slice();
   const lastX = steps.length ? steps[steps.length - 1].x : x;
-  steps.push({
-    x: lastX,
-    y: gY,
-    pose: "sit",
-    state: "sit",
-    ms: 160,
-    showNest: true,
-  });
   steps.push({ x: lastX, y: gY, pose: "sleep", state: "sleep", ms: 1e12 });
   return { steps, kind: "nest" };
 }
